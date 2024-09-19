@@ -28,8 +28,10 @@ public class Code01_DifferentStrings {
 		PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
 		n = Integer.valueOf(in.readLine());
 		for (int i = 0; i < n; i++) {
+			// value()方法是求一个字符串的哈希值
 			nums[i] = value(in.readLine().toCharArray());
 		}
+		// cnt()方法是求有多少个不同的字符串
 		out.println(cnt());
 		out.flush();
 		out.close();
@@ -37,6 +39,9 @@ public class Code01_DifferentStrings {
 	}
 
 	public static long value(char[] s) {
+		// '231'
+		// 2*10+3
+		// (2*10+3)*10+1
 		long ans = v(s[0]);
 		for (int i = 1; i < s.length; i++) {
 			ans = ans * base + v(s[i]);
